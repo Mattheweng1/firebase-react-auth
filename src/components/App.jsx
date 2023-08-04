@@ -7,6 +7,7 @@ import Login from "./Login";
 import PrivateRoute from "./PrivateRoute";
 import ForgotPassword from "./ForgotPassword";
 import UpdateProfile from "./UpdateProfile";
+import ChatRoom from "./ChatRoom";
 
 function App() {
   return (
@@ -24,6 +25,11 @@ function App() {
                 <Route path="/update-profile" element={
                   <PrivateRoute>
                     <UpdateProfile/>
+                  </PrivateRoute>
+                }></Route>
+                <Route path="/chat-room" element={
+                  <PrivateRoute>
+                    <ChatRoom/>
                   </PrivateRoute>
                 }></Route>
                 <Route path="/signup" element={<Signup/>}></Route>
