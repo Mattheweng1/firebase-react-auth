@@ -47,7 +47,7 @@ const ForgotPassword = () => {
           </div>
         </Card.Body>
       </Card>
-      <div className='w-100 text-center mt-2'>
+      <div className='w-100 text-center text-light mt-2 boldShadow'>
         Need an account? <Link to='/signup'>Sign Up</Link>
       </div>
     </>

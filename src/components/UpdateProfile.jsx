@@ -13,7 +13,9 @@ const UpdateProfile = () => {
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
 
-  async function handleUpdateEmail() {
+  async function handleUpdateEmail(e) {
+    e.preventDefault()
+
     setMessage('')
     setError('')
     
@@ -43,7 +45,9 @@ const UpdateProfile = () => {
     setLoading(false)
   }
 
-  async function handleUpdatePassword() {
+  async function handleUpdatePassword(e) {
+    e.preventDefault()
+    
     setMessage('')
     setError('')
 
@@ -81,14 +85,16 @@ const UpdateProfile = () => {
           {error && <Alert variant='danger'>{error}</Alert>}
           {message && <Alert variant='success'>{message}</Alert>}
           <strong>Email:</strong> {currentUser.email}
-          <Form>
+          <Form onSubmit={handleUpdateEmail}>
             <Form.Group id='email' className='mt-4'>
               <Form.Label>New Email</Form.Label>
               <Form.Control type='email' ref={emailRef}></Form.Control>
             </Form.Group>
-            <Button disabled={loading} className='w-100 mt-4 mb-4' type='button' onClick={() => handleUpdateEmail()}>
+            <Button disabled={loading} className='w-100 mt-4 mb-4' type='submit'>
               Update Email
             </Button>
+          </Form>
+          <Form onSubmit={handleUpdatePassword}>
             <Form.Group id='password' className='mt-2'>
               <Form.Label>New Password</Form.Label>
               <Form.Control type='password' ref={passwordRef}></Form.Control>
@@ -97,13 +103,13 @@ const UpdateProfile = () => {
               <Form.Label>New Password Confirmation</Form.Label>
               <Form.Control type='password' ref={passwordConfirmRef}></Form.Control>
             </Form.Group>
-            <Button disabled={loading} className='w-100 mt-4' type='button' onClick={() => handleUpdatePassword()}>
+            <Button disabled={loading} className='w-100 mt-4' type='submit'>
               Update Password
             </Button>
           </Form>
         </Card.Body>
       </Card>
-      <div className='w-100 text-center mt-2'>
+      <div className='w-100 text-center mt-2 boldShadow'>
         <Link to='/'>Return to Dashboard</Link>
       </div>
     </>

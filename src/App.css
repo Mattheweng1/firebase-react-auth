@@ -1,0 +1,16 @@
+body {
+  background-color: rgba(40, 44, 52, 0.911);
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn-link {
+  text-decoration: none;
+}
+
+.boldShadow {
+  font-weight: bold;
+  text-shadow: black 0 0 4px;
+}
